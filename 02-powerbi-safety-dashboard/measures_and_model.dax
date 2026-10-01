@@ -1,0 +1,31 @@
+// ================================================
+// POWER BI DAX MEASURES - SAFETY & RISK DASHBOARD
+// ================================================
+
+// 1. Total Incidents
+Total_Incidents = 
+COUNTROWS('Fact_Incidents')
+
+// 2. Days Since Last Incident
+Days_Since_Last_Incident = 
+DATEDIFF(
+    MAX('Fact_Incidents'[Incident_Date]), 
+    TODAY(), 
+    DAY
+)
+
+// 3. High Risk Incident Rate (%)
+High_Risk_Rate = 
+DIVIDE(
+    CALCULATE(COUNTROWS('Fact_Incidents'), 'Fact_Incidents'[Severity_Level] IN {"High", "Critical"}),
+    [Total_Incidents],
+    0
+)
+
+// 4. Lost Time Injury Frequency Rate (LTIFR)
+LTIFR = 
+DIVIDE(
+    CALCULATE(COUNTROWS('Fact_Incidents'), 'Fact_Incidents'[Is_Lost_Time] = TRUE()) * 1000000,
+    SUM('Fact_WorkHours'[Total_Hours_Worked]),
+    0
+)
