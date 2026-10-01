@@ -2,13 +2,13 @@
 
 Welcome! I am an Industrial Engineer and Data Analyst specializing in ETL pipelines, SQL database design, and interactive Power BI dashboards. Below are selected projects showcasing end-to-end data processing and analytics solutions.
 
-🛠 **Tech Stack**
+## 🛠 **Tech Stack**
 
 - **Languages & Tools:** Python (pandas, BeautifulSoup, PyMuPDF), SQL (PostgreSQL, MySQL), Power BI, SAS.
 
 - **Specialties:** Data Extraction (Web Scraping, PDF parsing), Data Cleansing & Normalization, Relational Database Design, Business Intelligence & KPI Dashboards.
 
-📁 **Featured Projects**
+## 📁 **Featured Projects**
 
 1. [Automated PDF Data Extraction Pipeline](./01-pdf-data-extractor)
 
